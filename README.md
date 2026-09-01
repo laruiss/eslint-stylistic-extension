@@ -32,7 +32,7 @@ const createNumericRule = (
   getErrorMessage: () => string,
 ) => {
   /* ... */
-};
+}
 ```
 
 ### `import-specifier-newline`
@@ -49,7 +49,7 @@ its own line, only listens to `ObjectExpression`, `TSTypeLiteral` and
 onto a single line between the braces:
 
 ```ts
-import { describe, expect, it, beforeEach, vi } from "vitest";
+import { describe, expect, it, beforeEach, vi } from 'vitest'
 ```
 
 This rule adds the missing per-specifier behavior for named imports and
@@ -65,7 +65,7 @@ Options: `"always"` (default) | `"never"` | `"consistent"`.
 
 ```ts
 // always
-import { describe, expect, it, beforeEach, vi } from "vitest";
+import { describe, expect, it, beforeEach, vi } from 'vitest'
 ```
 
 ### `object-pattern-property-newline`
@@ -86,7 +86,7 @@ const usePrefixedErrorState = ({
   tabKeyTransform,
 }: Options) => {
   /* ... */
-};
+}
 ```
 
 This rule adds the missing per-property behavior for destructured object
@@ -107,7 +107,7 @@ const usePrefixedErrorState = ({
   tabKeyTransform,
 }: Options) => {
   /* ... */
-};
+}
 ```
 
 ## Usage
@@ -115,20 +115,20 @@ const usePrefixedErrorState = ({
 Flat config (`eslint.config.js` / `eslint.config.ts`):
 
 ```ts
-import newline from "@laruiss/eslint-stylistic-extension";
+import newline from '@laruiss/eslint-stylistic-extension'
 
 export default [
   {
     plugins: {
-      "@laruiss/newline": newline,
+      '@laruiss/newline': newline,
     },
     rules: {
-      "@laruiss/newline/function-declaration-argument-newline": ["error", "always"],
-      "@laruiss/newline/import-specifier-newline": ["error", "always"],
-      "@laruiss/newline/object-pattern-property-newline": ["error", "always"],
+      '@laruiss/newline/function-declaration-argument-newline': ['error', 'always'],
+      '@laruiss/newline/import-specifier-newline': ['error', 'always'],
+      '@laruiss/newline/object-pattern-property-newline': ['error', 'always'],
     },
   },
-];
+]
 ```
 
 ## Development

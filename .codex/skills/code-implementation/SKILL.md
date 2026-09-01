@@ -1,6 +1,6 @@
 ---
 name: code-implementation
-description: "Code implementation, refactoring, and bugfixes for this ESLint plugin. Use for implementing rules, refactoring TypeScript, or fixing plugin behavior. Read the shared project skill before acting."
+description: 'Code implementation, refactoring, and bugfixes for this ESLint plugin. Use for implementing rules, refactoring TypeScript, or fixing plugin behavior. Read the shared project skill before acting.'
 ---
 
 # Codex Adapter - Implementation and Refactoring

@@ -1,7 +1,7 @@
 ---
 name: create-pr
 description: Creates a Pull Request from the current branch.
-argument-hint: "[base branch]"
+argument-hint: '[base branch]'
 agent: agent
 ---
 
