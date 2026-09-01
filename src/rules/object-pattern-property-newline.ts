@@ -1,15 +1,15 @@
-import type { Rule } from 'eslint'
+import type { Rule } from "eslint";
 
-type Option = 'always' | 'never' | 'consistent'
+type Option = "always" | "never" | "consistent";
 
 function isTokenOnSameLine(left: { loc: any }, right: { loc: any }): boolean {
-  return left.loc.end.line === right.loc.start.line
+  return left.loc.end.line === right.loc.start.line;
 }
 
 interface Checker {
-  messageId: 'unexpectedLineBreak' | 'missingLineBreak'
-  check: (prevToken: any, currentToken: any) => boolean
-  createFix: (token: any, tokenBefore: any) => Rule.ReportFixer
+  messageId: "unexpectedLineBreak" | "missingLineBreak";
+  check: (prevToken: any, currentToken: any) => boolean;
+  createFix: (token: any, tokenBefore: any) => Rule.ReportFixer;
 }
 
 /**
@@ -22,49 +22,51 @@ interface Checker {
  */
 const rule: Rule.RuleModule = {
   meta: {
-    type: 'layout',
+    type: "layout",
     docs: {
-      description: 'Enforce line breaks between properties of a destructured object pattern',
+      description: "Enforce line breaks between properties of a destructured object pattern",
     },
-    fixable: 'whitespace',
+    fixable: "whitespace",
     schema: [
       {
-        type: 'string',
-        enum: ['always', 'never', 'consistent'],
+        type: "string",
+        enum: ["always", "never", "consistent"],
       },
     ],
     messages: {
-      unexpectedLineBreak: 'There should be no line break here.',
-      missingLineBreak: 'There should be a line break after this property.',
+      unexpectedLineBreak: "There should be no line break here.",
+      missingLineBreak: "There should be a line break after this property.",
     },
   },
   create(context) {
-    const option: Option = (context.options[0] as Option) ?? 'always'
-    const sourceCode: any = context.sourceCode
+    const option: Option = (context.options[0] as Option) ?? "always";
+    const sourceCode: any = context.sourceCode;
 
-    const checkers: Record<'unexpected' | 'missing', Checker> = {
+    const checkers: Record<"unexpected" | "missing", Checker> = {
       unexpected: {
-        messageId: 'unexpectedLineBreak',
+        messageId: "unexpectedLineBreak",
         check: (prevToken, currentToken) => !isTokenOnSameLine(prevToken, currentToken),
-        createFix: (token, tokenBefore) => fixer =>
-          fixer.replaceTextRange([tokenBefore.range[1], token.range[0]], ' '),
+        createFix: (token, tokenBefore) => (fixer) =>
+          fixer.replaceTextRange([tokenBefore.range[1], token.range[0]], " "),
       },
       missing: {
-        messageId: 'missingLineBreak',
+        messageId: "missingLineBreak",
         check: (prevToken, currentToken) => isTokenOnSameLine(prevToken, currentToken),
-        createFix: (token, tokenBefore) => fixer =>
-          fixer.replaceTextRange([tokenBefore.range[1], token.range[0]], '\n'),
+        createFix: (token, tokenBefore) => (fixer) =>
+          fixer.replaceTextRange([tokenBefore.range[1], token.range[0]], "\n"),
       },
-    }
+    };
 
     function checkProperties(propertyNodes: any[], checker: Checker) {
       for (let i = 1; i < propertyNodes.length; i++) {
-        const prevPropertyToken = sourceCode.getLastToken(propertyNodes[i - 1])
-        const currentPropertyToken = sourceCode.getFirstToken(propertyNodes[i])
+        const prevPropertyToken = sourceCode.getLastToken(propertyNodes[i - 1]);
+        const currentPropertyToken = sourceCode.getFirstToken(propertyNodes[i]);
 
         if (checker.check(prevPropertyToken, currentPropertyToken)) {
-          const tokenBefore = sourceCode.getTokenBefore(currentPropertyToken, { includeComments: true })
-          const hasLineCommentBefore = tokenBefore?.type === 'Line'
+          const tokenBefore = sourceCode.getTokenBefore(currentPropertyToken, {
+            includeComments: true,
+          });
+          const hasLineCommentBefore = tokenBefore?.type === "Line";
 
           context.report({
             node: propertyNodes[i - 1],
@@ -74,36 +76,38 @@ const rule: Rule.RuleModule = {
             },
             messageId: checker.messageId,
             fix: hasLineCommentBefore ? null : checker.createFix(currentPropertyToken, tokenBefore),
-          })
+          });
         }
       }
     }
 
     function check(propertyNodes: any[]) {
-      if (propertyNodes.length < 2) return
-
-      if (option === 'never') {
-        checkProperties(propertyNodes, checkers.unexpected)
-        return
+      if (propertyNodes.length < 2) {
+        return;
       }
 
-      if (option === 'always') {
-        checkProperties(propertyNodes, checkers.missing)
-        return
+      if (option === "never") {
+        checkProperties(propertyNodes, checkers.unexpected);
+        return;
+      }
+
+      if (option === "always") {
+        checkProperties(propertyNodes, checkers.missing);
+        return;
       }
 
       // consistent
       const firstOnSameLine = isTokenOnSameLine(
         sourceCode.getLastToken(propertyNodes[0]),
         sourceCode.getFirstToken(propertyNodes[1]),
-      )
-      checkProperties(propertyNodes, firstOnSameLine ? checkers.unexpected : checkers.missing)
+      );
+      checkProperties(propertyNodes, firstOnSameLine ? checkers.unexpected : checkers.missing);
     }
 
     return {
-      ObjectPattern: node => check(node.properties),
-    }
+      ObjectPattern: (node) => check(node.properties),
+    };
   },
-}
+};
 
-export default rule
+export default rule;

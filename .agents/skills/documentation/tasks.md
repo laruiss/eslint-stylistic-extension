@@ -28,4 +28,4 @@
 >
 > Summarize the relevant trends and migration risks.
 
-*Recommended frequency: monthly.*
+_Recommended frequency: monthly._

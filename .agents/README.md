@@ -34,6 +34,7 @@ This document defines how to maintain uniform instructions for all AI agents (ag
 This folder contains **agnostic, specialized workflows**, automatically discoverable by agents based on context.
 
 **Structure**:
+
 ```
 skills/
 ├── code-implementation/
@@ -51,6 +52,7 @@ skills/
 ```
 
 Each skill has:
+
 - **SKILL.md**: description, usage context, associated documentation
 - **tasks.md**: common tasks for this skill
 
@@ -78,6 +80,7 @@ Required format for an agent-specific instruction:
 
 ```md
 ## Agent-only (AgentName)
+
 - Reason: ...
 - Impact: ...
 - Fallback: ...
