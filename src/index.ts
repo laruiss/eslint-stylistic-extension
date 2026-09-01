@@ -6,7 +6,7 @@ import objectPatternPropertyNewline from './rules/object-pattern-property-newlin
 
 const meta = {
   name: '@laruiss/eslint-stylistic-extension',
-  version: '1.0.0', // x-release-please-version
+  version: '1.1.0', // x-release-please-version
 }
 
 const plugin: ESLint.Plugin = {
