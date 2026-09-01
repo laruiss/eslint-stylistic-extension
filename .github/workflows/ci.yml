@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install vite-plus
+        run: curl -fsSL https://vite.plus | bash
+
+      - name: Add vite-plus to PATH
+        run: echo "$HOME/.local/share/vite-plus/bin" >> "$GITHUB_PATH"
+
+      - run: vp install --frozen-lockfile
+
+      - run: vp check

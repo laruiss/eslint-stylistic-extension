@@ -1,7 +1,7 @@
 ---
 name: create-branch
 description: Creates a local branch from a GitHub issue.
-argument-hint: "<issue id|#issue|issue URL>"
+argument-hint: '<issue id|#issue|issue URL>'
 agent: agent
 ---
 
