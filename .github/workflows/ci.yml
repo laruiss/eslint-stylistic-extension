@@ -18,12 +18,6 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install vite-plus
-        run: curl -fsSL https://vite.plus | bash
+      - run: pnpm install --frozen-lockfile
 
-      - name: Add vite-plus to PATH
-        run: echo "$HOME/.local/share/vite-plus/bin" >> "$GITHUB_PATH"
-
-      - run: vp install --frozen-lockfile
-
-      - run: vp check
+      - run: pnpm exec vp check
