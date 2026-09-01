@@ -11,7 +11,8 @@ The project's **Skills** apply automatically:
 - `.agents/skills/code-implementation/` — implementation & refactoring
 - `.agents/skills/test-writing/` — tests
 - `.agents/skills/documentation/` — documentation
-- `.agents/skills/commit-conventions/` — commits & PR (absolute priority)
+- `.agents/skills/commit-conventions/` — commits & PR authoring (absolute priority)
+- `.agents/skills/code-review/` — reviewing a PR or diff before merge
 
 ## Custom commands
 

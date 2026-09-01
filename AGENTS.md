@@ -21,6 +21,7 @@ Determine which category matches the user's request:
 | Write tests, improve coverage       | `test-writing`        |
 | Write documentation, README, guides | `documentation`       |
 | Create a commit, check conventions  | `commit-conventions`  |
+| Review a PR or diff before merge    | `code-review`         |
 
 ### Step 2: Load the appropriate skill
 
@@ -56,10 +57,11 @@ The following commands are exposed by agent adapters when present (`.codex/comma
 
 Some skills take priority over others depending on context:
 
-1. **commit-conventions**: absolute priority for any commit or PR operation
+1. **commit-conventions**: absolute priority when authoring or formatting a commit, branch, or PR (message, title, target branch) — not when reviewing PR content, see `code-review`
 2. **code-implementation**: priority for code implementation
 3. **test-writing**: priority when writing tests
 4. **documentation**: priority for documentation
+5. **code-review**: priority when reviewing a PR or diff before merge
 
 ## Commit conventions
 

@@ -46,7 +46,10 @@ skills/
 ├── documentation/
 │   ├── SKILL.md
 │   └── tasks.md
-└── commit-conventions/
+├── commit-conventions/
+│   ├── SKILL.md
+│   └── tasks.md
+└── code-review/
     ├── SKILL.md
     └── tasks.md
 ```

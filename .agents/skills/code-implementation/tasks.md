@@ -22,11 +22,6 @@
 > Keep the same behavior unless explicitly requested otherwise.
 > Verify that autofix stays deterministic and that comments aren't moved in a risky way.
 
-## 🙏 Code review
-
-> Do a technical review of this file: readability, typing, compliance with the ESLint API, complexity, option consistency, and autofix robustness.
-> Give concrete, prioritized recommendations.
-
 ## 🧰 Type check
 
 > Analyze this file and point out where typing is weak or implicit.

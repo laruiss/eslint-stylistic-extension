@@ -1,6 +1,6 @@
 ---
 name: code-implementation
-description: 'Code implementation, refactoring, and bugfixes for this ESLint plugin. USE FOR: implementing rules; refactoring TypeScript; fixing plugin behavior; modifying exports. DO NOT USE FOR: writing tests (separate skill); documentation (separate skill); commit conventions (separate skill).'
+description: 'Code implementation, refactoring, and bugfixes for this ESLint plugin. USE FOR: implementing rules; refactoring TypeScript; fixing plugin behavior; modifying exports. DO NOT USE FOR: writing tests (separate skill); documentation (separate skill); commit conventions (separate skill); reviewing a PR or diff before merge (separate skill, code-review).'
 ---
 
 # Implementation and Refactoring
