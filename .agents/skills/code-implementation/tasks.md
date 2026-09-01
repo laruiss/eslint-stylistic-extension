@@ -47,4 +47,4 @@
 >
 > Suggest files or helpers to remove, merge, or clarify.
 
-*Recommended frequency: before a release.*
+_Recommended frequency: before a release._

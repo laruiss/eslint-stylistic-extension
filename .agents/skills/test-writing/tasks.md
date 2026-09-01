@@ -14,4 +14,4 @@
 > List uncovered rules, untested options, and missing autofix cases.
 > Propose a prioritized test plan.
 
-*Recommended frequency: before a release or a behavior change in a rule.*
+_Recommended frequency: before a release or a behavior change in a rule._

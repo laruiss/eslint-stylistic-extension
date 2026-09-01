@@ -32,7 +32,7 @@ These tasks span multiple areas or the whole project.
 > - refactoring recommendations
 > - critical files to watch
 
-*Recommended frequency: before a release or a major change.*
+_Recommended frequency: before a release or a major change._
 
 ---
 
@@ -65,7 +65,7 @@ These tasks span multiple areas or the whole project.
 >
 > Produce a clear summary and propose the highest-priority updates.
 
-*Recommended frequency: monthly, or before publishing to the npm registry.*
+_Recommended frequency: monthly, or before publishing to the npm registry._
 
 ---
 
@@ -83,4 +83,4 @@ These tasks span multiple areas or the whole project.
 >
 > Generate a Markdown report in `.ai-review.md` if explicitly requested.
 
-*Recommended frequency: before a PR.*
+_Recommended frequency: before a PR._

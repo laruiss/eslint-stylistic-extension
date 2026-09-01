@@ -75,38 +75,38 @@ Quick test:
 
 ### Everyday development
 
-| Intent | gitmoji code | gitmoji | type |
-| --- | --- | --- | --- |
-| New rule or new public behavior | `:sparkles:` | ✨ | `feat` |
-| Bug fix | `:bug:` | 🐛 | `fix` |
-| Refactoring with no behavior change | `:recycle:` | ♻️ | `refactor` |
-| Formatting with no logic change | `:lipstick:` | 💄 | `style` |
+| Intent                              | gitmoji code | gitmoji | type       |
+| ----------------------------------- | ------------ | ------- | ---------- |
+| New rule or new public behavior     | `:sparkles:` | ✨      | `feat`     |
+| Bug fix                             | `:bug:`      | 🐛      | `fix`      |
+| Refactoring with no behavior change | `:recycle:`  | ♻️      | `refactor` |
+| Formatting with no logic change     | `:lipstick:` | 💄      | `style`    |
 
 ### Documentation and maintenance
 
-| Intent | gitmoji code | gitmoji | type |
-| --- | --- | --- | --- |
-| Documentation | `:memo:` | 📝 | `docs` |
-| Tests | `:white_check_mark:` | ✅ | `test` |
-| General maintenance | `:wrench:` | 🔧 | `chore` |
+| Intent              | gitmoji code         | gitmoji | type    |
+| ------------------- | -------------------- | ------- | ------- |
+| Documentation       | `:memo:`             | 📝      | `docs`  |
+| Tests               | `:white_check_mark:` | ✅      | `test`  |
+| General maintenance | `:wrench:`           | 🔧      | `chore` |
 
 ### Build and publishing
 
-| Intent | gitmoji code | gitmoji | type |
-| --- | --- | --- | --- |
-| Build, packaging, or external dependencies | `:package:` | 📦️ | `build` |
-| CI/CD, GitHub Actions | `:construction_worker:` | 👷 | `ci` |
+| Intent                                     | gitmoji code            | gitmoji | type    |
+| ------------------------------------------ | ----------------------- | ------- | ------- |
+| Build, packaging, or external dependencies | `:package:`             | 📦️      | `build` |
+| CI/CD, GitHub Actions                      | `:construction_worker:` | 👷      | `ci`    |
 
 ### Specialized fixes
 
-| Intent | gitmoji code | gitmoji | type |
-| --- | --- | --- | --- |
-| Commit revert | `:rewind:` | ⏪ | `revert` |
-| Breaking change | `:boom:` | 💥 | `feat!` or `fix!` |
-| Security | `:lock:` | 🔒️ | `fix` |
-| Typo | `:pencil2:` | ✏️ | `docs` |
-| Linter or compiler warnings | `:rotating_light:` | 🚨 | `style` or `fix` depending on context |
-| Performance | `:zap:` | ⚡ | `perf` |
+| Intent                      | gitmoji code       | gitmoji | type                                  |
+| --------------------------- | ------------------ | ------- | ------------------------------------- |
+| Commit revert               | `:rewind:`         | ⏪      | `revert`                              |
+| Breaking change             | `:boom:`           | 💥      | `feat!` or `fix!`                     |
+| Security                    | `:lock:`           | 🔒️      | `fix`                                 |
+| Typo                        | `:pencil2:`        | ✏️      | `docs`                                |
+| Linter or compiler warnings | `:rotating_light:` | 🚨      | `style` or `fix` depending on context |
+| Performance                 | `:zap:`            | ⚡      | `perf`                                |
 
 For breaking changes, always add a `BREAKING CHANGE:` footer describing the impact and the migration path.
 
