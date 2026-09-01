@@ -10,6 +10,7 @@ Each skill has its own task list:
 - **Test Writing** → [`skills/test-writing/tasks.md`](skills/test-writing/tasks.md)
 - **Documentation** → [`skills/documentation/tasks.md`](skills/documentation/tasks.md)
 - **Commit Conventions** → [`skills/commit-conventions/tasks.md`](skills/commit-conventions/tasks.md)
+- **Code Review** → [`skills/code-review/tasks.md`](skills/code-review/tasks.md)
 
 All tasks follow the conventions defined in [`instructions.md`](instructions.md).
 
@@ -66,21 +67,3 @@ _Recommended frequency: before a release or a major change._
 > Produce a clear summary and propose the highest-priority updates.
 
 _Recommended frequency: monthly, or before publishing to the npm registry._
-
----
-
-### 🧠 AI review of recent code
-
-**Goal:** automatically check recent changes.
-
-> For files changed since the last commit, review:
->
-> - style and typing consistency
-> - convention compliance
-> - robustness of the ESLint rules and their autofix
-> - compatibility with the public surface
-> - associated tests, present or missing
->
-> Generate a Markdown report in `.ai-review.md` if explicitly requested.
-
-_Recommended frequency: before a PR._

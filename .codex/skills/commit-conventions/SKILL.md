@@ -1,6 +1,6 @@
 ---
 name: commit-conventions
-description: 'Git commit, branch, and pull request conventions for this ESLint plugin. Use before creating commits, branches, issues, or PRs. This skill has priority over other project skills for commit and PR work.'
+description: 'Git commit, branch, and pull request conventions for this ESLint plugin. Use before creating commits, branches, issues, or PRs. This skill has priority over other project skills for authoring commit/branch/PR metadata (not for reviewing PR content — use code-review).'
 ---
 
 # Codex Adapter - Commits and Pull Requests
